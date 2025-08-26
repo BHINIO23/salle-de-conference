@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+    <!-- Inclure Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Police Inter pour la cohérence */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <!-- Bannière avec une image de 1181 x 295 -->
+    <div class="w-full max-w-lg mb-6 rounded-2xl overflow-hidden shadow-md">
+        <img 
+            src="file:///D:/MINEDDTE%20-%20DID/Gestion%20de%20presences/Formulaire%20web/banierre.jpg" 
+            alt="Bannière de la page d'accueil" 
+            class="w-full h-auto object-cover"
+        />
+    </div>
+    
+    <!-- Conteneur principal centré -->
+    <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-lg border border-gray-200">
+        <!-- Titre de la page -->
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-4">Bienvenue à salle de conférence!</h2>
+		<h3 class="text-2xl font-bold text-gray-600 text-center mb-4">Gestion de présence</h3>
+
+        <!-- Zone de message avec défilement -->
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-300 h-64 overflow-y-auto mb-6">
+            <p class="text-gray-700 leading-relaxed text-justify">
+                 <h4 class="text-center mb-2"><b>Mention de confidentialité et de consentement </b></h4>
+            <p class="text-sm text-gray-600 mb-6">
+                En apposant ma signature ci-dessous, je reconnais et accepte ce qui suit :
+            </p>
+
+            <!-- Liste des points -->
+            <ul class="space-y-4 text-sm text-gray-700">
+                <li class="flex items-start">
+                    <span class="mr-2 text-green-600 font-bold">1.</span>
+                    <div>
+                        <strong class="text-gray-900">Collecte des Données :</strong> Je comprends que mes informations personnelles, notamment mon nom, ma date de présence et l'heure d'arrivée et de départ, seront collectées et enregistrées électroniquement.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-green-600 font-bold">2.</span>
+                    <div>
+                        <strong class="text-gray-900">Utilisation des Données :</strong> Je suis informé(e) que ces données seront utilisées uniquement à des fins de gestion de présence et de sécurité au sein du Ministère de la Transition Numérique et de la Digitalisation.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-green-600 font-bold">3.</span>
+                    <div>
+                        <strong class="text-gray-900">Conservation et Sécurité :</strong> Je suis conscient(e) que mes données seront conservées de manière sécurisée et confidentielle, conformément à la politique de conservation des données du ministère, et ne seront accessibles qu'aux personnes autorisées.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-green-600 font-bold">4.</span>
+                    <div>
+                        <strong class="text-gray-900">Droits :</strong> Je reconnais avoir le droit d'accéder à mes données personnelles, de demander leur rectification ou suppression, conformément à la législation en vigueur sur la protection des données personnelles.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-green-600 font-bold">5.</span>
+                    <div>
+                        <strong class="text-gray-900">Consentement :</strong> Par ma signature, je donne mon consentement éclairé à la collecte et au traitement de mes données personnelles.
+                    </div>
+                </li>
+            </ul>
+        </div>
+            </p>
+        </div>
+        
+        
+    </div>
+	 <br>
+        <!-- Bouton pour la page suivante-->
+        <div class="flex justify-end">
+            <button id="nextPageBtn" class="px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg shadow-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 transition-colors duration-200">
+                J'accepte
+            </button>
+        </div>
+            <!-- Pied de page -->
+            <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">SUIVEZ-NOUS</h3>
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">
+                        <i class="ph-fill ph-facebook-logo text-2xl"></i>
+                    </a>
+					
+                    <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors">
+                        <i class="ph-fill ph-twitter-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-blue-700 transition-colors">
+                        <i class="ph-fill ph-linkedin-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-purple-600 transition-colors">
+                        <i class="ph-fill ph-instagram-logo text-2xl"></i>
+                    </a>
+                </div>
+                <p class="text-xs text-gray-500">
+                    Abidjan-Plateau, Cité Administrative, Tour A, 1er Etage<br>
+                    01 BP 650 ABIDJAN 17
+                </p>
+                <a href="" class="text-xs text-blue-500 hover:underline mt-2 inline-block">www.environnement.gouv.ci</a>
+            < <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nextPageBtn = document.getElementById('nextPageBtn');
+
+            // Ajoute un écouteur d'événements pour le clic sur le bouton
+            nextPageBtn.addEventListener('click', () => {
+                // Pour l'instant, on affiche une alerte pour simuler le passage
+                // Remplacez cette ligne par la logique de navigation réelle, par exemple :
+            window.location.href = 'enregistrement.html';
+                //alert("Vous êtes prêt à continuer vers le formulaire !");
+            });
+        });
+    </script>/div>
+
+</body>
+</html>
+   

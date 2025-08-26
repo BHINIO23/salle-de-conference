@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Inscription</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        #signatureCanvas {
+            border: 1px solid #D1D5DB;
+            background-color: #F3F4F6;
+            cursor: crosshair;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-lg mb-6 rounded-2xl overflow-hidden">
+        <img src="file:///D:/MINEDDTE%20-%20DID/Gestion%20de%20presences/Formulaire%20web/banierre.jpg" alt="Ministère de l'Environnement, du Developpement Durable et de la Transition Ecologique" class="w-full h-auto object-cover">
+    </div>
+
+    <div id="formContainer" class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg border border-gray-200">
+        <h1 class="text-2xl font-bold text-gray-800 text-center mb-6">Veuillez vous enregistrer</h1>
+        
+        <form id="inscriptionForm" class="space-y-4">
+            
+            <div>
+                <label for="noms" class="block text-sm font-bold text-gray-700">Nom et Prénoms</label>
+                <input type="text" id="noms" name="noms" required minlength="5" maxlength="50" pattern="[A-ZÀ-Ÿ\s]+"
+                        oninput="this.value = this.value.toUpperCase()"
+                        class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-bold text-gray-700">Adresse e-mail</label>
+                <input type="email" id="email" name="email" required
+                        class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+			
+            <div>
+                <label for="telephone" class="block text-sm font-bold text-gray-700">Téléphone</label>
+                <div class="mt-1 flex rounded-lg shadow-sm">
+                    <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-200 text-gray-600 text-sm">
+                        +225
+                    </span>
+                    <input type="tel" id="telephone" name="telephone" required pattern="[0-9]{10}"
+                            class="flex-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-r-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+
+            <div>
+                <label for="structure" class="block text-sm font-bold text-gray-700">Structure</label>
+                <input type="text" id="structure" name="structure" required minlength="3" maxlength="50" pattern="[A-ZÀ-Ÿ\s\']+"
+                        oninput="this.value = this.value.toUpperCase()"
+                        class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div>
+                <label for="fonction" class="block text-sm font-bold text-gray-700">Fonction</label>
+                <input type="text" id="fonction" name="fonction" required minlength="5" maxlength="50" pattern="[A-ZÀ-Ÿ\s\']+"
+                        oninput="this.value = this.value.toUpperCase()"
+                        class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div>
+                <label for="pays" class="block text-sm font-bold text-gray-700">Pays</label>
+                <select id="pays" name="pays" required
+                         class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="" disabled selected>Selectionnez un pays</option>
+					<option value="COTE D IVOIRE">COTE D'IVOIRE</option>
+					<option value="AFGHANISTAN">AFGHANISTAN</option>
+					<option value="AFRIQUE DU SUD">AFRIQUE DU SUD</option>
+					<option value="ALBANIE">ALBANIE</option>
+					<option value="ALGERIE">ALGERIE</option>
+					<option value="ALLEMAGNE">ALLEMAGNE</option>
+					<option value="ANDORRE">ANDORRE</option>
+					<option value="ANGOLA">ANGOLA</option>
+					<option value="ARABIE SAOUDITE">ARABIE SAOUDITE</option>
+					<option value="ARGENTINE">ARGENTINE</option>
+					<option value="ARMENIE">ARMENIE</option>
+					<option value="AUSTRALIE">AUSTRALIE</option>
+					<option value="AUTRICHE">AUTRICHE</option>
+					<option value="AZERBAIDJAN">AZERBAIDJAN</option>
+					<option value="BAHAMAS">BAHAMAS</option>
+					<option value="BAHREIN">BAHREIN</option>
+					<option value="BANGLADESH">BANGLADESH</option>
+					<option value="BELARUS">BELARUS</option>
+					<option value="BELGIQUE">BELGIQUE</option>
+					<option value="BENIN">BENIN</option>
+					<option value="BIRMANIE">BIRMANIE</option>
+					<option value="BOLIVIE">BOLIVIE</option>
+					<option value="BOSNIE-HERZEGOVINE">BOSNIE-HERZEGOVINE</option>
+					<option value="BOTSWANA">BOTSWANA</option>
+					<option value="BRESIL">BRESIL</option>
+					<option value="BRUNEI">BRUNEI</option>
+					<option value="BULGARIE">BULGARIE</option>
+					<option value="BURKINA FASO">BURKINA FASO</option>
+					<option value="BURUNDI">BURUNDI</option>
+					<option value="CAMBODGE">CAMBODGE</option>
+					<option value="CAMEROUN">CAMEROUN</option>
+					<option value="CANADA">CANADA</option>
+					<option value="CAP-VERT">CAP-VERT</option>
+					<option value="CHILI">CHILI</option>
+					<option value="CHINE">CHINE</option>
+					<option value="CHYPRE">CHYPRE</option>
+					<option value="COLOMBIE">COLOMBIE</option>
+					<option value="COMORES">COMORES</option>
+					<option value="CONGO (BRAZZAVILLE)">CONGO (BRAZZAVILLE)</option>
+					<option value="CONGO (KINSHASA)">CONGO (KINSHASA)</option>
+					<option value="COREE DU NORD">COREE DU NORD</option>
+					<option value="COREE DU SUD">COREE DU SUD</option>
+					<option value="COSTA RICA">COSTA RICA</option>
+					<option value="CROATIE">CROATIE</option>
+					<option value="CUBA">CUBA</option>
+					<option value="DANEMARK">DANEMARK</option>
+					<option value="DJIBOUTI">DJIBOUTI</option>
+					<option value="DOMINIQUE">DOMINIQUE</option>
+					<option value="EGYPTE">EGYPTE</option>
+					<option value="EMIRATS ARABES UNIS">EMIRATS ARABES UNIS</option>
+					<option value="EQUATEUR">EQUATEUR</option>
+					<option value="ERYTHREE">ERYTHREE</option>
+					<option value="ESPAGNE">ESPAGNE</option>
+					<option value="ESWATINI">ESWATINI</option>
+					<option value="ESTONIE">ESTONIE</option>
+					<option value="ETATS-UNIS">ETATS-UNIS</option>
+					<option value="ETHIOPIE">ETHIOPIE</option>
+					<option value="FINLANDE">FINLANDE</option>
+					<option value="FRANCE">FRANCE</option>
+					<option value="GABON">GABON</option>
+					<option value="GAMBIE">GAMBIE</option>
+					<option value="GEORGIE">GEORGIE</option>
+					<option value="GHANA">GHANA</option>
+					<option value="GRECE">GRECE</option>
+					<option value="GRENADE">GRENADE</option>
+					<option value="GUATEMALA">GUATEMALA</option>
+					<option value="GUINEE">GUINEE</option>
+					<option value="GUINEE-BISSAU">GUINEE-BISSAU</option>
+					<option value="GUINEE EQUATORIALE">GUINEE EQUATORIALE</option>
+					<option value="GUYANA">GUYANA</option>
+					<option value="HAITI">HAITI</option>
+					<option value="HONDURAS">HONDURAS</option>
+					<option value="HONGRIE">HONGRIE</option>
+					<option value="INDE">INDE</option>
+					<option value="INDONESIE">INDONESIE</option>
+					<option value="IRAK">IRAK</option>
+					<option value="IRAN">IRAN</option>
+					<option value="IRLANDE">IRLANDE</option>
+					<option value="ISLANDE">ISLANDE</option>
+					<option value="ISRAEL">ISRAEL</option>
+					<option value="ITALIE">ITALIE</option>
+					<option value="JAMAIQUE">JAMAIQUE</option>
+					<option value="JAPON">JAPON</option>
+					<option value="JORDANIE">JORDANIE</option>
+					<option value="KAZAKHSTAN">KAZAKHSTAN</option>
+					<option value="KENYA">KENYA</option>
+					<option value="KIRGHIZISTAN">KIRGHIZISTAN</option>
+					<option value="KOWEIT">KOWEIT</option>
+					<option value="LAOS">LAOS</option>
+					<option value="LESOTHO">LESOTHO</option>
+					<option value="LETTONIE">LETTONIE</option>
+					<option value="LIBAN">LIBAN</option>
+					<option value="LIBERIA">LIBERIA</option>
+					<option value="LIBYE">LIBYE</option>
+					<option value="LIECHTENSTEIN">LIECHTENSTEIN</option>
+					<option value="LITUANIE">LITUANIE</option>
+					<option value="LUXEMBOURG">LUXEMBOURG</option>
+					<option value="MACEDOINE">MACEDOINE</option>
+					<option value="MADAGASCAR">MADAGASCAR</option>
+					<option value="MALAISIE">MALAISIE</option>
+					<option value="MALAWI">MALAWI</option>
+					<option value="MALDIVES">MALDIVES</option>
+					<option value="MALI">MALI</option>
+					<option value="MALTE">MALTE</option>
+					<option value="MAROC">MAROC</option>
+					<option value="MAURICE">MAURICE</option>
+					<option value="MAURITANIE">MAURITANIE</option>
+					<option value="MEXIQUE">MEXIQUE</option>
+					<option value="MOLDAVIE">MOLDAVIE</option>
+					<option value="MONGOLIE">MONGOLIE</option>
+					<option value="MONTENEGRO">MONTENEGRO</option>
+					<option value="MOZAMBIQUE">MOZAMBIQUE</option>
+					<option value="NAMIBIE">NAMIBIE</option>
+					<option value="NEPAL">NEPAL</option>
+					<option value="NICARAGUA">NICARAGUA</option>
+					<option value="NIGER">NIGER</option>
+					<option value="NIGERIA">NIGERIA</option>
+					<option value="NORVEGE">NORVEGE</option>
+					<option value="NOUVELLE-ZELANDE">NOUVELLE-ZELANDE</option>
+					<option value="OMAN">OMAN</option>
+					<option value="OUGANDA">OUGANDA</option>
+					<option value="OUZBEKISTAN">OUZBEKISTAN</option>
+					<option value="PAKISTAN">PAKISTAN</option>
+					<option value="PALESTINE">PALESTINE</option>
+					<option value="PANAMA">PANAMA</option>
+					<option value="PAPOUASIE-NOUVELLE-GUINEE">PAPOUASIE-NOUVELLE-GUINEE</option>
+					<option value="PARAGUAY">PARAGUAY</option>
+					<option value="PAYS-BAS">PAYS-BAS</option>
+					<option value="PEROU">PEROU</option>
+					<option value="PHILIPPINES">PHILIPPINES</option>
+					<option value="POLOGNE">POLOGNE</option>
+					<option value="PORTUGAL">PORTUGAL</option>
+					<option value="QATAR">QATAR</option>
+					<option value="REPUBLIQUE CENTRAFRICAINE">REPUBLIQUE CENTRAFRICAINE</option>
+					<option value="REPUBLIQUE DOMINICAINE">REPUBLIQUE DOMINICAINE</option>
+					<option value="REPUBLIQUE TCHEQUE">REPUBLIQUE TCHEQUE</option>
+					<option value="ROUMANIE">ROUMANIE</option>
+					<option value="ROYAUME-UNI">ROYAUME-UNI</option>
+					<option value="RUSSIE">RUSSIE</option>
+					<option value="RWANDA">RWANDA</option>
+					<option value="SAINT-MARIN">SAINT-MARIN</option>
+					<option value="SALVADOR">SALVADOR</option>
+					<option value="SAMOA">SAMOA</option>
+					<option value="SAO TOME ET PRINCIPE">SAO TOME ET PRINCIPE</option>
+					<option value="SENEGAL">SENEGAL</option>
+					<option value="SERBIE">SERBIE</option>
+					<option value="SEYCHELLES">SEYCHELLES</option>
+					<option value="SIERRA LEONE">SIERRA LEONE</option>
+					<option value="SINGAPOUR">SINGAPOUR</option>
+					<option value="SLOVAQUIE">SLOVAQUIE</option>
+					<option value="SLOVENIE">SLOVENIE</option>
+					<option value="SOMALIE">SOMALIE</option>
+					<option value="SOUDAN DU NORD">SOUDAN DU NORD</option>
+					<option value="SOUDAN DU SUD">SOUDAN DU SUD</option>
+					<option value="SRI LANKA">SRI LANKA</option>
+					<option value="SUEDE">SUEDE</option>
+					<option value="SUISSE">SUISSE</option>
+					<option value="SURINAME">SURINAME</option>
+					<option value="SYRIE">SYRIE</option>
+					<option value="TADJIKISTAN">TADJIKISTAN</option>
+					<option value="TANZANIE">TANZANIE</option>
+					<option value="TCHAD">TCHAD</option>
+					<option value="THAILANDE">THAILANDE</option>
+					<option value="TIMOR">TIMOR</option>
+					<option value="TOGO">TOGO</option>
+					<option value="TRINITE ET TOBAGO">TRINITE ET TOBAGO</option>
+					<option value="TUNISIE">TUNISIE</option>
+					<option value="TURQUIE">TURQUIE</option>
+					<option value="UKRAINE">UKRAINE</option>
+					<option value="URUGUAY">URUGUAY</option>
+					<option value="VENEZUELA">VENEZUELA</option>
+					<option value="VIET NAM">VIET NAM</option>
+					<option value="YEMEN">YEMEN</option>
+					<option value="ZAMBIE">ZAMBIE</option>
+					<option value="ZIMBABWE">ZIMBABWE</option>
+                    </select>
+            </div>
+
+            <div>
+                <label for="ville" class="block text-sm font-bold text-gray-700">Ville</label>
+                <input type="text" id="ville" name="ville" required minlength="5" maxlength="50" pattern="[A-ZÀ-Ÿ\s]+"
+                        oninput="this.value = this.value.toUpperCase()"
+                        class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div>
+                <label for="signatureCanvas" class="block text-sm font-bold text-gray-700">Signature</label>
+                <canvas id="signatureCanvas" class="w-full rounded-lg" width="400" height="150"></canvas>
+                <div class="mt-2 flex justify-between space-x-2">
+                    <button type="button" id="clearBtn" class="flex-1 px-4 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Effacer</button>
+                    <button type="submit" id="submitBtn" class="flex-1 px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                        Soumettre
+                    </button>
+                </div>
+                <div id="signatureError" class="mt-2 text-red-500 text-sm hidden">Veuillez apposer votre signature avant de soumettre.</div>
+                <div id="cooldownMessage" class="mt-2 text-yellow-600 text-sm hidden text-center">Vous avez déjà émargé...<span id="cooldownTimer"></span>.</div>
+            </div>
+
+            <input type="hidden" id="signature" name="signature">
+        </form>
+    </div>
+
+    <div id="thankYouMessage" class="hidden bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg border border-gray-200 text-center">
+        <h2 class="text-2xl font-bold text-green-600 mb-4">✅ Merci pour votre participation !</h2>
+        <p class="text-gray-700 mb-6">Votre inscription a bien été enregistrée. Vous pouvez télécharger le document en cliquant sur le bouton ci-dessous.</p>
+        <a id="downloadLink" href="#" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            Voir les documents
+        </a>
+    </div>
+	<!-- Pied de page -->
+            <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">SUIVEZ-NOUS</h3>
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">
+                        <i class="ph-fill ph-facebook-logo text-2xl"></i>
+                    </a>
+					
+                    <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors">
+                        <i class="ph-fill ph-twitter-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-blue-700 transition-colors">
+                        <i class="ph-fill ph-linkedin-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-purple-600 transition-colors">
+                        <i class="ph-fill ph-instagram-logo text-2xl"></i>
+                    </a>
+                </div>
+                <p class="text-xs text-gray-500">
+                    Abidjan-Plateau, Cité Administrative, Tour A, 1er Etage<br>
+                    01 BP 650 ABIDJAN 17
+                </p>
+                <a href="" class="text-xs text-blue-500 hover:underline mt-2 inline-block">www.environnement.gouv.ci</a>
+            </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw8OheKL6FzAi1HBv4NCjgTZlHOFmQOPLhzMw0A3g78CDdzQq-_v-JGVMIvcyfh_NovEg/exec'; // <-- REMPLACEZ PAR VOTRE URL
+            const FORM_COOLDOWN_KEY = 'formSubmissionTimestamp';
+            const COOLDOWN_HOURS = 0.005;
+            const COOLDOWN_MS = COOLDOWN_HOURS * 60 * 60 * 1000;
+            const DOCUMENT_URL = 'https://drive.google.com/file/d/1VVV2mSOSbYb1hYi31N4mddqVt8BcS4HN/view?usp=sharing'; // <-- REMPLACEZ PAR L'URL DU DOCUMENT PDF, DOCX, etc.
+
+            const form = document.getElementById('inscriptionForm');
+            const formContainer = document.getElementById('formContainer');
+            const thankYouMessage = document.getElementById('thankYouMessage');
+            const downloadLink = document.getElementById('downloadLink');
+            const signatureCanvas = document.getElementById('signatureCanvas');
+            const ctx = signatureCanvas.getContext('2d');
+            const clearBtn = document.getElementById('clearBtn');
+            const signatureInput = document.getElementById('signature');
+            const signatureError = document.getElementById('signatureError');
+            const submitBtn = document.getElementById('submitBtn');
+            const cooldownMessage = document.getElementById('cooldownMessage');
+            const cooldownTimerDisplay = document.getElementById('cooldownTimer');
+
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
+            const emptyCanvasData = signatureCanvas.toDataURL();
+            
+            // Initialisation du canevas
+            ctx.strokeStyle = '#374151';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            // Fonction pour vérifier la période de soumission
+            function checkCooldown() {
+                const lastSubmission = localStorage.getItem(FORM_COOLDOWN_KEY);
+                if (lastSubmission) {
+                    const elapsedTime = Date.now() - parseInt(lastSubmission);
+                    if (elapsedTime < COOLDOWN_MS) {
+                        const remainingTime = COOLDOWN_MS - elapsedTime;
+                        const hours = Math.floor(remainingTime / 3600000);
+                        const minutes = Math.floor((remainingTime % 3600000) / 60000);
+                        const seconds = Math.floor((remainingTime % 60000) / 1000);
+                        
+                        cooldownMessage.classList.remove('hidden');
+                        //cooldownTimerDisplay.textContent = `${hours}h ${minutes}m ${seconds}s`;
+                        submitBtn.disabled = true;
+                        
+                        // Mettre à jour le compte à rebours toutes les secondes
+                        const timerInterval = setInterval(() => {
+                            const newRemainingTime = COOLDOWN_MS - (Date.now() - parseInt(lastSubmission));
+                            if (newRemainingTime <= 0) {
+                                clearInterval(timerInterval);
+                                submitBtn.disabled = false;
+                                cooldownMessage.classList.add('hidden');
+                            } else {
+                                const h = Math.floor(newRemainingTime / 3600000);
+                                const m = Math.floor((newRemainingTime % 3600000) / 60000);
+                                const s = Math.floor((newRemainingTime % 60000) / 1000);
+                                //cooldownTimerDisplay.textContent = `${h}h ${m}m ${s}s`;
+                            }
+                        }, 1000);
+                        return true;
+                    }
+                }
+                submitBtn.disabled = false;
+                cooldownMessage.classList.add('hidden');
+                return false;
+            }
+
+            // Gestionnaires d'événements pour le dessin
+            function draw(x, y) {
+                if (!isDrawing) return;
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                [lastX, lastY] = [x, y];
+                signatureError.classList.add('hidden');
+            }
+
+            signatureCanvas.addEventListener('mousedown', (e) => {
+                isDrawing = true;
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+            });
+            signatureCanvas.addEventListener('mousemove', (e) => {
+                draw(e.offsetX, e.offsetY);
+            });
+            signatureCanvas.addEventListener('mouseup', () => isDrawing = false);
+            signatureCanvas.addEventListener('mouseout', () => isDrawing = false);
+            signatureCanvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                isDrawing = true;
+                const touch = e.touches[0];
+                const rect = signatureCanvas.getBoundingClientRect();
+                lastX = touch.clientX - rect.left;
+                lastY = touch.clientY - rect.top;
+            });
+            signatureCanvas.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                if (!isDrawing) return;
+                const touch = e.touches[0];
+                const rect = signatureCanvas.getBoundingClientRect();
+                draw(touch.clientX - rect.left, touch.clientY - rect.top);
+            });
+            signatureCanvas.addEventListener('touchend', () => isDrawing = false);
+            signatureCanvas.addEventListener('touchcancel', () => isDrawing = false);
+
+            clearBtn.addEventListener('click', () => {
+                ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+            });
+            
+            // Gérer la soumission du formulaire
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                if (signatureCanvas.toDataURL() === emptyCanvasData) {
+                    signatureError.classList.remove('hidden');
+                    return;
+                }
+
+                // Vérification finale de la période de soumission
+                if (checkCooldown()) {
+                    return;
+                }
+                
+                signatureInput.value = signatureCanvas.toDataURL();
+                
+                submitBtn.textContent = 'Envoi en cours...';
+                submitBtn.disabled = true;
+
+                const formData = new FormData(form);
+                
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // C'est important pour que le script Apps Script accepte la requête
+                })
+                .then(response => {
+                    // Les réponses en 'no-cors' sont opaques. On ne peut pas les lire.
+                    // On part du principe que la requête a réussi.
+                    console.log('Soumission réussie!');
+                    localStorage.setItem(FORM_COOLDOWN_KEY, Date.now().toString());
+                    
+                    formContainer.classList.add('hidden');
+                    thankYouMessage.classList.remove('hidden');
+                    downloadLink.href = DOCUMENT_URL;
+                    
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la soumission du formulaire:', error);
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                    submitBtn.textContent = 'Soumettre';
+                    submitBtn.disabled = false;
+                    checkCooldown(); // Réactiver le bouton si le "cooldown" est terminé
+                });
+            });
+
+            // Gérer le clic sur le bouton de téléchargement
+            downloadLink.addEventListener('click', (e) => {
+                e.preventDefault(); // Empêche la navigation
+                
+                // Crée un lien temporaire pour le téléchargement
+                const tempLink = document.createElement('a');
+                tempLink.href = downloadLink.href;
+                tempLink.download = downloadLink.href.split('/').pop(); // Nom du fichier
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+
+                // Fermer le navigateur
+                window.close();
+            });
+            
+            // Vérifier la période de soumission au chargement de la page
+            checkCooldown();
+        });
+    </script>
+</body>
+</html>
